@@ -2,7 +2,7 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "ls -la target/release/ && ./target/release/http-server"
+startCommand = "./target/release/http-server"
 
 [[services]]
 name = "web"
