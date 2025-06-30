@@ -1,2 +1,5 @@
 [phases.setup]
 nixPkgs = ["rustc", "cargo"]
+
+[start]
+cmd = ["./target/release/http-server"]
