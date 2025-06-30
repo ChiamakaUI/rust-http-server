@@ -2,7 +2,7 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "./target/release/http-server"
+startCommand = "cargo run --release"
 
 [[services]]
 name = "web"
