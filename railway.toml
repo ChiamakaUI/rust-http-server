@@ -1,0 +1,9 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "./target/release/http-server"
+
+[[services]]
+name = "web"
+port = 5000
