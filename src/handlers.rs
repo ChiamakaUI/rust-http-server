@@ -1,4 +1,3 @@
-// src/handlers.rs
 
 use axum::{
     extract::Json,
@@ -204,7 +203,6 @@ pub async fn send_token(
         Err(e) => return (StatusCode::BAD_REQUEST, Json(ApiResponse::<InstructionResponse>::error(e))),
     };
 
-    // Simplified - in production you'd derive the actual token accounts
     let source = owner;
     let destination_token_account = destination;
 
@@ -216,7 +214,7 @@ pub async fn send_token(
         &owner,
         &[],
         payload.amount,
-        9, // decimals - should be fetched from mint
+        9,
     )
     .unwrap();
 

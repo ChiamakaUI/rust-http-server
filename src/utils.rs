@@ -1,4 +1,3 @@
-
 use base64::{engine::general_purpose::STANDARD as BASE64, Engine};
 use solana_sdk::{
     instruction::Instruction,
@@ -30,7 +29,6 @@ pub fn parse_keypair(secret: &str) -> Result<Keypair, String> {
         })
 }
 
-// Convert a Solana instruction to our response format
 pub fn instruction_to_response(instruction: Instruction) -> InstructionResponse {
     InstructionResponse {
         program_id: instruction.program_id.to_string(),
