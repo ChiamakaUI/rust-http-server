@@ -1,5 +1,14 @@
 [phases.setup]
+# Make sure rustc and cargo are installed during the build phase
 nixPkgs = ["rustc", "cargo"]
 
+[phases.build]
+# Build the release binary, then copy it into /app/bin where Nixpacks expects it
+cmds = [
+  "cargo build --release",
+  "mkdir -p /app/bin && cp target/release/http-server /app/bin/http-server"
+]
+
 [start]
-cmd = ["./target/release/http-server"]
+# Tell Nixpacks to start this binary at runtime
+cmd = ["/app/bin/http-server"]

@@ -1,6 +1,5 @@
 [build]
 builder = "nixpacks"
-buildCommand = "cargo build --release"
 
 [[services]]
 name = "web"
